@@ -4,5 +4,7 @@
 -  Java
 -  Spring Boot
 -  h2-console
+
+#### Development editors:
 -  Intellij Idea
 -  Postman
