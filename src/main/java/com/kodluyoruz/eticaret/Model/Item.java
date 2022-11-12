@@ -22,8 +22,8 @@ public class Item {
     @Column(name = "itemName")
     private String itemName;
 
-    @Column(name = "noOfItem")
-    private Integer noOfItem;
+    @Column(name = "itemStock")
+    private Integer itemStock;
 
     @Column(name = "itemPrice")
     private Double itemPrice;

@@ -1,5 +1,4 @@
 package com.kodluyoruz.eticaret.Dto;
-import com.kodluyoruz.eticaret.Annotations.CategoryAnnotations.CategoryRules;
 import lombok.Data;
 
 /**
@@ -7,8 +6,7 @@ import lombok.Data;
  */
 
 @Data
-public class CategoryRequestDto {
+public class CategoryResponseDto {
 
-    @CategoryRules
     private String  categoryName;
 }

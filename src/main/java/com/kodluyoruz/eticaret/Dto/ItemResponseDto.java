@@ -10,7 +10,7 @@ public class ItemResponseDto {
 
     private String itemNo;
     private String itemName;
-    private Integer noOfItem;
+    private Integer itemStock;
     private Double itemPrice;
     private String categoryName;
 }

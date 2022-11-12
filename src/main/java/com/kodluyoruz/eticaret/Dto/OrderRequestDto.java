@@ -9,6 +9,7 @@ import lombok.Data;
 public class OrderRequestDto {
 
     private int itemId;
-    private int noOfOrder;
+    private int numberOfOrder;
+    private int userId;
 
 }

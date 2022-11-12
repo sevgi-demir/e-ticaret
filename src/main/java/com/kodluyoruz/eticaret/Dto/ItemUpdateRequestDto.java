@@ -8,6 +8,11 @@ import lombok.Data;
 @Data
 public class ItemUpdateRequestDto {
 
-    private Integer noOfItem;
+    private int itemId;
+    private String itemNo;
+    private String itemName;
+    private Integer itemStock;
     private Double itemPrice;
+    private int categoryId;
+
 }

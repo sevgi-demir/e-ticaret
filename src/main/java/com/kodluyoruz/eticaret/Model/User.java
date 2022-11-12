@@ -12,9 +12,9 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "userId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int userId;
 
     @Column(name = "name")
     private String name;

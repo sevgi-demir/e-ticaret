@@ -16,17 +16,14 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "userId")
-    private int userId;
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 
     @Column(name = "itemId")
     private int itemId;
 
-    @Column(name = "userEmail")
-    private String userEmail;
-
-    @Column(name = "noOfOrder")
-    private int noOfOrder;
-
+    @Column(name = "numberOfOrder")
+    private int numberOfOrder;
 
 }

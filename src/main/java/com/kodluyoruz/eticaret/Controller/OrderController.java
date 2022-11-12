@@ -20,18 +20,26 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping("/save")
-    public Order saveOrder(@RequestBody OrderRequestDto order) {
-        return orderService.saveOrder(order);
+    @PostMapping("/save")
+    public String saveOrder(@RequestBody OrderRequestDto order) {
+        this.orderService.saveOrder(order);
+        return "Add order successful!";
     }
-
 
     @GetMapping("/getAll")
     public List<Order> getAllOrder() {
         return orderService.getAllOrder();
     }
 
-    @GetMapping("/orderId")
+    @DeleteMapping("/delete")
+    public ResponseEntity<?> deleteOrder(@RequestParam int orderId){
+        String orders = orderService.deleteOrder(orderId);
+        return ( orders != null )
+                ? new ResponseEntity<>(orders, HttpStatus.OK)
+                : ResponseEntity.status(HttpStatus.NOT_FOUND).body("Order Record Not Found!");
+    }
+
+    @GetMapping("/fetchById")
     public ResponseEntity<?> getOrder(@RequestParam int orderId){
         OrderResponseDto orderResponseDto =  orderService.getOrder(orderId);
         return ( orderResponseDto != null )
