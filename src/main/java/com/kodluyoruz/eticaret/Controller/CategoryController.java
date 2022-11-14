@@ -2,7 +2,7 @@ package com.kodluyoruz.eticaret.Controller;
 import com.kodluyoruz.eticaret.Dto.CategoryRequestDto;
 import com.kodluyoruz.eticaret.Dto.CategoryResponseDto;
 import com.kodluyoruz.eticaret.Dto.DeletedCategoryDto;
-import com.kodluyoruz.eticaret.Service.CategoryService;
+import com.kodluyoruz.eticaret.Service.ICategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -18,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoryController {
 
-    private final CategoryService categoryService;
+    private final ICategoryService categoryService;
 
 
     @PostMapping("/add")
