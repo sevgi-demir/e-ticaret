@@ -67,16 +67,18 @@ public class ItemService {
     }
 
     public String updateItem(ItemUpdateRequestDto itemUpdateRequestDto) {
-        if (this.itemRepository.findAll().get(itemUpdateRequestDto.getItemId()) == null) {
+        if (!this.itemRepository.findById(itemUpdateRequestDto.getItemId()).isPresent()) {
             return "You are not have this {" + itemUpdateRequestDto.getItemName() + "} product.";
         }
-        Item item=this.itemRepository.findAll().get(itemUpdateRequestDto.getItemId());
+       /* Item item=this.itemRepository.findById(itemUpdateRequestDto.getItemId()).orElseThrow(()->new NullPointerException("Aradığınız item bulunamadı"));
         item.setItemName(itemUpdateRequestDto.getItemName());
         item.setItemNo(itemUpdateRequestDto.getItemNo());
         item.setItemPrice(itemUpdateRequestDto.getItemPrice());
         item.setItemStock(itemUpdateRequestDto.getItemStock());
         Category category=this.categoryRepository.findAll().get(itemUpdateRequestDto.getCategoryId());
-        item.setCategory(category);
+        item.setCategory(category);*/
+
+        Item item=this.modelMapper.map(itemUpdateRequestDto,Item.class);
         this.itemRepository.save(item);
         return "Successful";
     }
