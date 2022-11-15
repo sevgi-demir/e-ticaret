@@ -3,7 +3,7 @@
 #### This project was made using the follow technologies:
 -  Java
 -  Spring Boot
--  h2-console
+-  H2 Database
 
 #### Development editors:
 -  Intellij Idea
